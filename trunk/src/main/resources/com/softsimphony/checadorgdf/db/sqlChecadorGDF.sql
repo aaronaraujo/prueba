@@ -8,3 +8,6 @@
  * Created: 16-ago-2016
  */
 
+create database checadorGDF;
+
+
