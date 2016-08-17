@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+    <classPathEntry location="/home/ss/mysql-connector-java-5.1.36.jar" />
+  <context id="context1" >
+     
+    <!-- Generador de clases base de datos siap-pt-->  
+    
+    <!---->
+    
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/BDChecadorGDF" userId="usrcgdfBD" password="pucgdfbd" />
+    
+    <javaModelGenerator targetPackage="com.softsimphony.checadorgdf.model" targetProject="MAVEN" />
+    <sqlMapGenerator targetPackage="com.softsimphony.checadorgdf.xml" targetProject="MAVEN" />
+    <javaClientGenerator targetPackage="com.softsimphony.checadorgdf.dao" targetProject="MAVEN" type="XMLMAPPER" />
+    
+    <table tableName="%" >
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+  </context>
+</generatorConfiguration>
