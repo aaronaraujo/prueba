@@ -11,20 +11,17 @@ import com.softsimphony.checadorgdf.model.Tiporegistro;
 import com.softsimphony.checadorgdf.model.TiporegistroExample;
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.apache.ibatis.session.SqlSession;
 
 /**
  *
  * @author ss
  */
-public class TipoRegistroService {
-    
+public class TiporegistroService {
     
     private TiporegistroMapper tiporegistroMapper;
     
-    public TipoRegistroService(){
+    public TiporegistroService(){
         
     }
     
@@ -44,6 +41,12 @@ public class TipoRegistroService {
         
     }
     
+    public List<Tiporegistro> obtenerTodos() throws IOException{
+        TiporegistroExample tipoRegistroExample = new TiporegistroExample();
+        tipoRegistroExample.createCriteria().andIdTipoRegistroIsNotNull();
+        return ejecutarExample(tipoRegistroExample);
+    }
+    
     
     private List<Tiporegistro> ejecutarExample(TiporegistroExample tiporegistroExample) throws IOException{
         List<Tiporegistro> registros;
@@ -60,20 +63,5 @@ public class TipoRegistroService {
         
         return registros;
     }
-    
-    public static void main(String[] args) {
-        try {
-            TipoRegistroService t=new TipoRegistroService();
-            
-            Tiporegistro registro=t.obtenerRegistro(1);
-            System.out.println("Registro:");
-            System.out.println("Nombre: "+registro.getNombre());
-            
-        } catch (IOException ex) {
-            Logger.getLogger(TipoRegistroService.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    
     
 }
