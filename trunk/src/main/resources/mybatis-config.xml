@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+
+<configuration>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC">
+        
+                            <property name="closeConnection" value="false"/>
+            
+                        </transactionManager>
+			
+			<dataSource type="POOLED">
+                            <property name="driver" value="com.mysql.jdbc.Driver"/>
+                        <!-- <property name="url" value="jdbc:mysql://localhost:3306/siap-pt"/>-->
+                         <!--<property name="url" value="jdbc:mysql://192.168.1.73:3306/siap_pt"/>-->
+                         <property name="url" value="jdbc:mysql://127.0.0.1:3306/BDChecadorGDF"/>
+
+		        <property name="username" value="usrcgdfBD"/>
+		        <property name="password" value="pucgdfbd"/>
+			</dataSource>
+			
+		</environment>
+	</environments>
+	
+	<mappers>
+            <mapper resource="com/softsimphony/checadorgdf/xml/AreaMapper.xml"/>
+            <mapper resource="com/softsimphony/checadorgdf/xml/HorarioMapper.xml"/>
+            <mapper resource="com/softsimphony/checadorgdf/xml/ReporteMapper.xml"/>
+            <mapper resource="com/softsimphony/checadorgdf/xml/TiporegistroMapper.xml"/>
+            <mapper resource="com/softsimphony/checadorgdf/xml/UsuarioMapper.xml"/>
+	</mappers>
+	
+</configuration>
